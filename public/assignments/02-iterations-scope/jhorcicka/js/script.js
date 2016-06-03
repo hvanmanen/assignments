@@ -73,11 +73,8 @@ assert([5, 10, 15, 20, 25], output);
 */
 let characters = ['Smithers', 'Ernie', 'Homer', 'Bert', 'Bart', 'Police chief Wiggum', 'Baloo'];
 let nonSimpsonsCharacters = ['Ernie', 'Bert', 'Baloo'];
-let simpsonsCharacters = []; 
-characters.forEach(function (name) {
-  if (!isInArray(name, nonSimpsonsCharacters)) {
-    simpsonsCharacters.push(name); 
-  }
+let simpsonsCharacters = characters.filter(function (name) {
+  return (!isInArray(name, nonSimpsonsCharacters));
 });
 assert(['Smithers', 'Homer', 'Bart', 'Police chief Wiggum'], simpsonsCharacters);
 
